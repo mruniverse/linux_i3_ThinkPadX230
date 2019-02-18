@@ -48,14 +48,18 @@ exec --no-startup-id pulseaudio
 exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
 
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 ################################################################################################
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 5"
 
-bindsym 113 exec amixer set Master toggle
-
+bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
@@ -280,7 +284,7 @@ mode "resize" {
 bindsym $mod+Escape exec --no-startup-id i3lock -c 000000
 
 # Autostart applications
-exec ~/.i3/autostart.sh
+exec gksu ~/.i3/autostart.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
