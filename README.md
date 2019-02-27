@@ -1,4 +1,4 @@
-# manjaro_i3_ThinkPadX230
-Configuration files for ThinkPadX230 on Manjaro Linux alongside I3.
+# Xubuntu_i3_ThinkPadX230
+Configuration files for ThinkPadX230 on XubuntuLinux alongside I3.
 
 ![alt text](example)
