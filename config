@@ -336,10 +336,13 @@ set_from_resource $term_color15    color15
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar
-	status_command i3blocks -c ~/.i3/i3blocks/config
+	status_command i3blocks -c ~/.i3/i3blocks/examples/i3blocks-config
 	position bottom
 	mode hide
 	hidden_state show
+
+  # tray_output none|primary|<output>
+	tray_output primary
 
 ## please set your primary output first. Example: 'dr --output eDP1 --primary'
 #	tray_output primary
@@ -352,7 +355,7 @@ bar {
 
     colors {
         background #000000
-        statusline #FFFFFF
+        statusline #dfdfdf
         separator  #5f06a8
 
 #                           border  backgr. text
