@@ -55,6 +55,11 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+
+
 bindsym XF86AudioMute exec "amixer -q -D pulse sset Master toggle"
 bindsym XF86AudioMicMute exec "amixer -D pulse sset Capture toggle"
 ################################################################################################
@@ -123,7 +128,7 @@ bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle; bar mode toggle
+bindsym $mod+f fullscreen toggle;
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -164,7 +169,7 @@ set $ws4 4
 set $ws5 5
 set $ws6 6
 set $ws7 7
-set $ws8 8:Spotify
+set $ws8 8:Media
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -338,8 +343,8 @@ bar {
 	i3bar_command i3bar
 	status_command i3blocks -c ~/.i3/i3blocks-config
 	position bottom
-	mode hide
-	hidden_state show
+	#mode hide
+	#hidden_state hide
 
   # tray_output none|primary|<output>
 	tray_output primary
