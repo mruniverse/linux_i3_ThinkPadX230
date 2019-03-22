@@ -169,7 +169,7 @@ set $ws4 4
 set $ws5 5
 set $ws6 6
 set $ws7 7
-set $ws8 8:Media
+set $ws8 8:Spotify
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -206,7 +206,7 @@ assign [class="Google-chrome"] $ws1
 assign [class="Atom"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
-assign [class="spotify-client"] $ws8
+assign [class="Spotify"] move to workspace $ws8, workspace --no-auto-back-and-forth $ws8
 
 # Open specific applications in floating mode
 for_window [class="Thunar"] floating enable
